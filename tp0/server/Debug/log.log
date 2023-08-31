@@ -1,17 +1,26 @@
 [INFO] 21:35:56:526 Servidor/(23939:23939): Servidor listo para recibir al cliente
+
 [INFO] 21:39:16:688 Servidor/(23999:23999): Servidor listo para recibir al cliente
 [INFO] 21:43:37:293 Servidor/(23999:23999): Se conecto un cliente!
 [INFO] 21:43:37:295 Servidor/(23999:23999): Me llego el mensaje valor
 [INFO] 21:43:41:051 Servidor/(23999:23999): Me llegaron los siguientes valores:
-
 [ERROR] 21:43:41:052 Servidor/(23999:23999): el cliente se desconecto. Terminando servidor
+
 [INFO] 21:55:57:651 Servidor/(24071:24071): Servidor listo para recibir al cliente
 [INFO] 21:57:40:899 Servidor/(24071:24071): Se conecto un cliente!
 [INFO] 21:57:40:899 Servidor/(24071:24071): Me llego el mensaje valor
 [INFO] 21:59:17:279 Servidor/(24071:24071): Me llegaron los siguientes valores:
-
 [INFO] 21:59:17:280 Servidor/(24071:24071): Hola sr. Server
 [INFO] 21:59:17:281 Servidor/(24071:24071): Como esta?
 [INFO] 21:59:17:281 Servidor/(24071:24071): Tu y yo sabemos que debes funcionar
 [INFO] 21:59:17:281 Servidor/(24071:24071): Porque soy Batman!
 [ERROR] 21:59:17:281 Servidor/(24071:24071): el cliente se desconecto. Terminando servidor
+
+[INFO] 02:42:26:037 Servidor/(8764:8764): Servidor listo para recibir al cliente
+[INFO] 02:42:53:497 Servidor/(8764:8764): Se conecto un cliente!
+[INFO] 02:42:53:498 Servidor/(8764:8764): Me llego el mensaje valor
+[INFO] 02:43:03:616 Servidor/(8764:8764): Me llegaron los siguientes valores:
+[INFO] 02:43:03:620 Servidor/(8764:8764): Che
+[INFO] 02:43:03:620 Servidor/(8764:8764): Que onda
+[ERROR] 02:43:03:620 Servidor/(8764:8764): el cliente se desconecto. Terminando servidor
+

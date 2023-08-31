@@ -16,14 +16,14 @@ int main(void) {
 			break;
 		case PAQUETE:
 			lista = recibir_paquete(cliente_fd);
-			log_info(logger, "Me llegaron los siguientes valores:\n");
+			log_info(logger, "Me llegaron los siguientes valores:");
 			list_iterate(lista, (void*) iterator);
 			break;
 		case -1:
-			log_error(logger, "el cliente se desconecto. Terminando servidor");
+			log_error(logger, "el cliente se desconecto. Terminando servidor\n");
 			return EXIT_FAILURE;
 		default:
-			log_warning(logger,"Operacion desconocida. No quieras meter la pata");
+			log_warning(logger,"Operacion desconocida. No quieras meter la pata\n");
 			break;
 		}
 	}
