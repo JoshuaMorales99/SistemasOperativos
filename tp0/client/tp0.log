@@ -1,0 +1,30 @@
+[INFO] 20:02:55:469 TP0/(3528:3528): Hola! Soy un log
+[INFO] 00:03:11:239 TP0/(3708:3708): Hola! Soy un log
+[INFO] 00:03:11:251 TP0/(3708:3708): IP: 127.0.0.1, PUERTO: 4444, CLAVE: valor
+[INFO] 00:25:27:153 TP0/(4246:4246): Hola! Soy un log
+[INFO] 00:25:27:160 TP0/(4246:4246): CLAVE: valor
+[INFO] 01:01:24:832 TP0/(4804:4804): Hola! Soy un log
+[INFO] 01:01:24:838 TP0/(4804:4804): CLAVE: valor
+[INFO] 01:01:30:855 TP0/(4804:4804): Se leyo el string: hola
+[INFO] 01:01:42:820 TP0/(4804:4804): Se leyo el string: mundo
+[INFO] 01:01:44:573 TP0/(4804:4804): Se leyo el string: !
+[INFO] 01:01:49:143 TP0/(4804:4804): Se leyo el string: Hola mundo!
+[INFO] 01:04:15:464 TP0/(4866:4866): Hola! Soy un log
+[INFO] 01:04:15:470 TP0/(4866:4866): CLAVE: valor
+[INFO] 01:04:23:045 TP0/(4866:4866): Se leyo el String: Soy Batman!
+[INFO] 01:04:38:111 TP0/(4866:4866): Se leyo el String: I'm Batman!
+[INFO] 20:22:19:165 TP0/(56021:56021): Hola! Soy un log
+[INFO] 20:22:19:194 TP0/(56021:56021): CLAVE: valor
+[INFO] 20:22:35:743 TP0/(56021:56021): Se leyo el String: Por favor
+[INFO] 20:22:56:498 TP0/(56021:56021): Se leyo el String: que esto funcione
+[INFO] 20:23:30:659 TP0/(56021:56021): Se leyo el String: Prayge
+[INFO] 20:42:48:503 TP0/(90841:90841): Hola! Soy un log
+[INFO] 20:42:48:518 TP0/(90841:90841): CLAVE: valor
+[INFO] 20:42:58:791 TP0/(90841:90841): Se leyo el String: Si prendo el server
+[INFO] 20:43:11:093 TP0/(90841:90841): Se leyo el String: Estaria genial
+[INFO] 20:43:14:901 TP0/(90841:90841): Se leyo el String: :D
+[INFO] 21:56:38:465 TP0/(24084:24084): Hola! Soy un log
+[INFO] 21:56:38:476 TP0/(24084:24084): CLAVE: valor
+[INFO] 21:57:06:343 TP0/(24084:24084): Se leyo el String: Esto funciona
+[INFO] 21:57:13:416 TP0/(24084:24084): Se leyo el String: Y lo sabes
+[INFO] 21:57:38:988 TP0/(24084:24084): Se leyo el String: -Julio Iglesias

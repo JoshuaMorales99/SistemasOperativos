@@ -2,11 +2,7 @@
 
 t_log* logger;
 
-int iniciar_servidor(void)
-{
-	// Quitar esta línea cuando hayamos terminado de implementar la funcion
-	assert(!"no implementado!");
-
+int iniciar_servidor(void){
 	int socket_servidor;
 
 	struct addrinfo hints, *servinfo, *p;
@@ -16,34 +12,45 @@ int iniciar_servidor(void)
 	hints.ai_socktype = SOCK_STREAM;
 	hints.ai_flags = AI_PASSIVE;
 
+	// Devolver informacion de red sobre una IP y un PUERTO.
 	getaddrinfo(NULL, PUERTO, &hints, &servinfo);
 
-	// Creamos el socket de escucha del servidor
+	for(p=servinfo; p != NULL; p = p->ai_next){
+		// Crear el socket de escucha del servidor.
+		socket_servidor = socket(servinfo->ai_family, servinfo->ai_socktype, servinfo->ai_protocol);
+		if(socket_servidor == -1) continue;
 
-	// Asociamos el socket a un puerto
+		// Asociar el socket a un puerto.
+		if(bind(socket_servidor, servinfo->ai_addr, servinfo->ai_addrlen) == -1) {
+			close(socket_servidor);
+			continue;
+		}
 
-	// Escuchamos las conexiones entrantes
+		break;
+	}
 
+	// Escuchar las conexiones entrantes.
+	listen(socket_servidor, SOMAXCONN);
+	// Liberar la memoria del serverinfo.
 	freeaddrinfo(servinfo);
+	// Loggear "Listo para escuchar a mi cliente".
 	log_trace(logger, "Listo para escuchar a mi cliente");
 
+	// Devolver el socket del servidor.
 	return socket_servidor;
 }
 
-int esperar_cliente(int socket_servidor)
-{
-	// Quitar esta línea cuando hayamos terminado de implementar la funcion
-	assert(!"no implementado!");
-
-	// Aceptamos un nuevo cliente
-	int socket_cliente;
+int esperar_cliente(int socket_servidor){
+	// Aceptar un nuevo cliente.
+	int socket_cliente = accept(socket_servidor, NULL, NULL);
+	// Loggear "Se conecto un cliente!".
 	log_info(logger, "Se conecto un cliente!");
 
+	// Retornar el socket del cliente.
 	return socket_cliente;
 }
 
-int recibir_operacion(int socket_cliente)
-{
+int recibir_operacion(int socket_cliente){
 	int cod_op;
 	if(recv(socket_cliente, &cod_op, sizeof(int), MSG_WAITALL) > 0)
 		return cod_op;
@@ -54,8 +61,7 @@ int recibir_operacion(int socket_cliente)
 	}
 }
 
-void* recibir_buffer(int* size, int socket_cliente)
-{
+void* recibir_buffer(int* size, int socket_cliente){
 	void * buffer;
 
 	recv(socket_cliente, size, sizeof(int), MSG_WAITALL);
@@ -65,25 +71,28 @@ void* recibir_buffer(int* size, int socket_cliente)
 	return buffer;
 }
 
-void recibir_mensaje(int socket_cliente)
-{
+void recibir_mensaje(int socket_cliente){
 	int size;
+
+	// Recibir mensaje.
 	char* buffer = recibir_buffer(&size, socket_cliente);
+	// Loggear el mensaje recibido.
 	log_info(logger, "Me llego el mensaje %s", buffer);
+	// Liberar memoria del buffer.
 	free(buffer);
 }
 
-t_list* recibir_paquete(int socket_cliente)
-{
+t_list* recibir_paquete(int socket_cliente){
 	int size;
 	int desplazamiento = 0;
 	void * buffer;
 	t_list* valores = list_create();
 	int tamanio;
 
+	// Recibir el buffer.
 	buffer = recibir_buffer(&size, socket_cliente);
-	while(desplazamiento < size)
-	{
+	// Deserealizar los campos que tenemos en el buffer.
+	while(desplazamiento < size){
 		memcpy(&tamanio, buffer + desplazamiento, sizeof(int));
 		desplazamiento+=sizeof(int);
 		char* valor = malloc(tamanio);
@@ -91,6 +100,8 @@ t_list* recibir_paquete(int socket_cliente)
 		desplazamiento+=tamanio;
 		list_add(valores, valor);
 	}
+
+	// Liberar memoria del buffer.
 	free(buffer);
 	return valores;
 }
